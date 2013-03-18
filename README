@@ -5,9 +5,12 @@ Requires at least: 3.1
 Tested up to: 3.5
 Stable tag: 4.2
 
-Based on the HTML5 Boilerplate created by Paul Irish and Divya Manian,
-this allows for easy inclusion/removal of all HTML5 Boilerplate options.
+Based on the [HTML5 Boilerplate](http://html5boilerplate.com/) created by
+[Paul Irish](http://paulirish.com/) and [Divya Manian](http://nimbupani.com/),
+this plug-in allows for easy inclusion and removal of all HTML5 Boilerplate options
+that are pertinent to WP.
 
+More about this plug-in can be found at http://aarontgrogg.com/html5boilerplate/
 
 == Description ==
 
@@ -31,9 +34,9 @@ Your call, let me know if you can think of a better implementation.
 
 Cannot for the life of me figure out how to make the screenshots work in the `readme.txt`, so here are the links...
 
-1. [screenshot-admin-screen.png](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-admin-screen.png)
-2. [screenshot-html-before.png](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-html-before.png)
-3. [screenshot-html-after.png](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-html-after.png)
+1. [Admin Screen](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-1.png)
+2. [HTML Before](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-2.png)
+3. [HTML After](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-3.png)
 
 More about this plug-in can be found at:
 [http://aarontgrogg.com/html5boilerplate/](http://aarontgrogg.com/html5boilerplate/)
@@ -88,9 +91,9 @@ Atg
 
 == Screenshots ==
 
-1. [screenshot-admin-screen.png](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-admin-screen.png)
-2. [screenshot-html-before.png](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-html-before.png)
-3. [screenshot-html-after.png](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-html-after.png)
+1. [Admin Screen](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-1.png)
+2. [HTML Before](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-2.png)
+3. [HTML After](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-3.png)
 
 
 == Changelog ==

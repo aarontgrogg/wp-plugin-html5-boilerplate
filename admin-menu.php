@@ -7,7 +7,7 @@
 	Plugin URI: http://aarontgrogg.com/html5boilerplate/
 	Description: Based on the <a href="http://html5boilerplate.com/" target="_blank">HTML5 Boilerplate</a> created by
 		<a href="http://paulirish.com" target="_blank">Paul Irish</a> and <a href="http://nimbupani.com" target="_blank">Divya Manian</a>,
-		this plug-in allows for easy inclusion and removal of all HTML5 Boilerplate options pertinent to WP.
+		this plug-in allows for easy inclusion and removal of all HTML5 Boilerplate options that are pertinent to WP.
 		More about this plug-in can be found at <a href="http://aarontgrogg.com/html5boilerplate/">http://aarontgrogg.com/html5boilerplate/</a>.
 	Version: 4.2
 	Author: Aaron T. Grogg, based on the work of Paul Irish & Divya Manian

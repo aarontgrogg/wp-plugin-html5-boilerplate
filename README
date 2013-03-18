@@ -48,7 +48,7 @@ http://aarontgrogg.com/boilerplate/
 Please let me know if you have any questions/suggestions/thoughts,
 Atg
 http://aarontgrogg.com/
-[aarontgrogg@gmail.com](mailto:aarontgrogg@gmail.com)
+aarontgrogg@gmail.com
 
 
 == Installation ==

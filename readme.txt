@@ -39,15 +39,15 @@ Cannot for the life of me figure out how to make the screenshots work in the `re
 3. [HTML After](http://aarontgrogg.com/wp-content/plugins/html5-boilerplate/screenshot-3.png)
 
 More about this plug-in can be found at:
-[http://aarontgrogg.com/html5boilerplate/](http://aarontgrogg.com/html5boilerplate/)
+http://aarontgrogg.com/html5boilerplate/
 
 I also built a Boilerplate theme based on [Elliot Jay Stocks'](http://elliotjaystocks.com/)
 [Starkers Theme](http://starkerstheme.com/) that can be found at:
-[http://aarontgrogg.com/boilerplate/](http://aarontgrogg.com/boilerplate/)
+http://aarontgrogg.com/boilerplate/
 
 Please let me know if you have any questions/suggestions/thoughts,
 Atg
-[http://aarontgrogg.com/](http://aarontgrogg.com/)
+http://aarontgrogg.com/
 [aarontgrogg@gmail.com](mailto:aarontgrogg@gmail.com)
 
 

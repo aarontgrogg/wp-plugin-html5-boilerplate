@@ -9,7 +9,7 @@
 		<a href="http://paulirish.com" target="_blank">Paul Irish</a> and <a href="http://nimbupani.com" target="_blank">Divya Manian</a>,
 		this plug-in allows for easy inclusion and removal of all HTML5 Boilerplate options that are pertinent to WP.
 		More about this plug-in can be found at <a href="http://aarontgrogg.com/html5boilerplate/">http://aarontgrogg.com/html5boilerplate/</a>.
-	Version: 4.2
+	Version: 4.3
 	Author: Aaron T. Grogg, based on the work of Paul Irish & Divya Manian
 	Author URI: http://aarontgrogg.com/
 	License: GPLv2 or later
@@ -329,7 +329,7 @@
 				echo '<p><strong>Note: If you do <em>not</em> include Modernizr, the IEShiv JS <em>will</em> be added to accommodate the HTML5 elements used in Boilerplate in weaker browsers:</strong></p>';
 				echo '<code>&lt;!--[if lt IE 9]&gt;</code>';
 				echo '<code>	&lt;script src="//html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;</code>';
-				echo '<code>	&lt;script&gt;!window.html5 && document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/ieshiv.js"%3E%3C/script%3E\'))&lt;/script&gt;</code>';
+				echo '<code>	&lt;script&gt;window.html5 || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/ieshiv.js"%3E%3C/script%3E\'))&lt;/script&gt;</code>';
 				echo '<code>&lt;![endif]--&gt;</code>';
 			}
 		endif; // H5BP_modernizr_js_setting
@@ -351,13 +351,13 @@
 			function H5BP_jquery_js_setting() {
 				$options = get_option('plugin_options');
 				$checked = (isset($options['H5BP_jquery_js']) && $options['H5BP_jquery_js']) ? 'checked="checked" ' : '';
-				$version = (isset($options['H5BP_jquery_version']) && $options['H5BP_jquery_version'] && $options['H5BP_jquery_version'] !== '') ? $options['H5BP_jquery_version'] : '1.8.2';
+				$version = (isset($options['H5BP_jquery_version']) && $options['H5BP_jquery_version'] && $options['H5BP_jquery_version'] !== '') ? $options['H5BP_jquery_version'] : '1.9.1';
 				$inhead = (isset($options['H5BP_jquery_head']) && $options['H5BP_jquery_head']) ? 'checked="checked" ' : '';
 				echo '<input class="check-field" type="checkbox" name="plugin_options[H5BP_jquery_js]" value="true" ' .$checked. '/>';
 				echo '<p><a href="http://jquery.com/">jQuery</a> is a JS library that aids greatly in developing high-quality JavaScript quickly and efficiently.</p>';
 				echo '<p>Selecting this option will add the following code to your pages just before the <code>&lt;/body&gt;</code>:</p>';
 				echo '<code>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js">&lt;/script&gt;</code>';
-				echo '<code>&lt;script&gt;!window.jQuery && document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/jquery.js"%3E%3C/script%3E\'))&lt;/script&gt;</code>';
+				echo '<code>&lt;script&gt;window.jQuery || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/jquery.js"%3E%3C/script%3E\'))&lt;/script&gt;</code>';
 				echo '<p><input class="check-field" type="checkbox" name="plugin_options[H5BP_jquery_head]" value="true" ' .$inhead. '/>';
 				echo '<strong>Note: <a href="http://developer.yahoo.com/blogs/ydn/posts/2007/07/high_performanc_5/">Best-practices</a> recommend that you load JS as close to the <code>&lt;/body&gt;</code> as possible.  If for some reason you would prefer jQuery and jQuery plug-ins to be in the <code>&lt;head&gt;</code>, please select this option.</strong></p>';
 				echo '<p>The above code first tries to download jQuery from Google\'s CDN (which might be available via the user\'s browser cache).  If this is not successful, it uses the theme\'s version.</p>';
@@ -627,7 +627,7 @@
 				$cache = H5BP_cache_buster();
 				echo '<!--[if lt IE 9]>'.PHP_EOL;
 				echo '	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>'.PHP_EOL; // try getting from CDN
-				echo '	<script>!window.html5 && document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/ieshiv.js'.$cache.'"%3E%3C/script%3E\'))</script>'.PHP_EOL; // fallback to local if CDN fails
+				echo '	<script>window.html5 || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/ieshiv.js'.$cache.'"%3E%3C/script%3E\'))</script>'.PHP_EOL; // fallback to local if CDN fails
 				echo '<![endif]-->'.PHP_EOL;
 			}
 		endif; // H5BP_add_ieshiv_script
@@ -645,10 +645,10 @@
 			function H5BP_add_jquery_script() {
 				$cache = H5BP_cache_buster();
 				$options = get_option('plugin_options');
-				$version = ($options['H5BP_jquery_version']) ? $options['H5BP_jquery_version'] : '1.8.2';
+				$version = ($options['H5BP_jquery_version']) ? $options['H5BP_jquery_version'] : '1.9.1';
 				wp_deregister_script( 'jquery' ); // get rid of WP's jQuery
 				echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'.PHP_EOL; // try getting from CDN
-				echo '<script>!window.jQuery || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/jquery.js'.$cache.'"%3E%3C/script%3E\'))</script>'.PHP_EOL; // fallback to local if CDN fails
+				echo '<script>window.jQuery || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/jquery.js'.$cache.'"%3E%3C/script%3E\'))</script>'.PHP_EOL; // fallback to local if CDN fails
 			}
 		endif; // H5BP_add_jquery_script
 

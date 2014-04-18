@@ -2,7 +2,7 @@
 Contributors: aarontgrogg
 Tags: html5, boilerplate
 Requires at least: 3.1
-Tested up to: 3.5
+Tested up to: 3.9
 Stable tag: 4.3
 
 Based on the [HTML5 Boilerplate](http://html5boilerplate.com/) created by
@@ -96,7 +96,7 @@ aarontgrogg@gmail.com
 == Changelog ==
 
 = 4.3 2013-04-05 =
-* Big thanks to FrŽdŽric Bolduc for pointing out that jQuery was being added twice, once from the Google CDN,
+* Big thanks to Frï¿½dï¿½ric Bolduc for pointing out that jQuery was being added twice, once from the Google CDN,
   then again the local version, because I had `!window.jQuery || ...` instead of `window.jQuery || ...`  Doh!
 * And speaking of jQuery, updated the local version to 1.9.1.
 * Finally figured out how Screenshots work, so... whew-hew!

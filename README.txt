@@ -5,8 +5,8 @@ Requires at least: 3.1
 Tested up to: 4.1.1
 Stable tag: 5.0.1
 
-Based on the [HTML5 Boilerplate](http://html5boilerplate.com/) created by
-[Paul Irish](http://paulirish.com/) and [Divya Manian](http://nimbupani.com/),
+Based on the HTML5 Boilerplate (http://html5boilerplate.com/) created by
+Paul Irish (http://paulirish.com/) and Divya Manian (http://nimbupani.com/),
 this plug-in allows for easy inclusion and removal of all HTML5 Boilerplate options
 that are pertinent to WP.
 

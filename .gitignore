@@ -7,7 +7,3 @@ Thumbs.db
 branches/
 tags/
 trunk/
-
-# required by WordPress Repository, but not for GitHub
-_LICENSE.txt
-readme.txt

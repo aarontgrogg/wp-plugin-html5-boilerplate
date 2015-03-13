@@ -9,7 +9,7 @@
 		<a href="http://paulirish.com" target="_blank">Paul Irish</a> and <a href="http://nimbupani.com" target="_blank">Divya Manian</a>,
 		this plug-in allows for easy inclusion and removal of all HTML5 Boilerplate options that are pertinent to WP.
 		More about this plug-in can be found at <a href="http://aarontgrogg.com/html5boilerplate/">http://aarontgrogg.com/html5boilerplate/</a>.
-	Version: 4.3
+	Version: 5.0.1
 	Author: Aaron T. Grogg, based on the work of Paul Irish & Divya Manian
 	Author URI: http://aarontgrogg.com/
 	License: GPLv2 or later
@@ -260,10 +260,10 @@
 			function H5BP_viewport_setting() {
 				$options = get_option('plugin_options');
 				$checked = (isset($options['H5BP_viewport']) && $options['H5BP_viewport']) ? 'checked="checked" ' : '';
-				$setting = (isset($options['H5BP_viewport_setting']) && $options['H5BP_viewport_setting']) ? $options['H5BP_viewport_setting'] : 'width=device-width';
+				$setting = (isset($options['H5BP_viewport_setting']) && $options['H5BP_viewport_setting']) ? $options['H5BP_viewport_setting'] : 'width=device-width, initial-scale=1';
 				echo '<input class="check-field" type="checkbox" name="plugin_options[H5BP_viewport]" value="true" ' .$checked. '/>';
 				echo '<p>Force <em><abbr title="iPhone, iTouch, iPad...">iThings</abbr></em> to <a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW19">show site at full-zoom</a>, instead of trying to show the entire page.</p>';
-				echo '<p>The HTML5 Boilerplate project suggests using just <code>width=device-width</code>, but you can use <a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/usingtheviewport/usingtheviewport.html">any option you want</a>:</p>';
+				echo '<p>The HTML5 Boilerplate project suggests using just <code>width=device-width, initial-scale=1</code>, but you can use <a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/usingtheviewport/usingtheviewport.html">any option you want</a>:</p>';
 				echo '<p><input type="text" size="40" name="plugin_options[H5BP_viewport_setting]" value="'.$setting.'"></p>';
 				echo '<p>Selecting this option will add the following code to the <code>&lt;head&gt;</code> of your pages:</p>';
 				echo '<code>&lt;meta name="viewport" content="'.$setting.'"&gt;</code>';
@@ -326,10 +326,9 @@
 				echo '<p><a href="http://modernizr.com/">Modernizr</a> is a JS library that appends classes to the <code>&lt;html&gt;</code> that indicate whether the user\'s browser is capable of handling advanced CSS, like "cssreflections" or "no-cssreflections".  It\'s a really handy way to apply varying CSS techniques, depending on the user\'s browser\'s abilities, without resorting to CSS hacks.</p>';
 				echo '<p>Selecting this option will add the following code to the <code>&lt;head&gt;</code> of your pages (note the lack of a version, when you\'re ready to upgrade, simply copy/paste the new version into the file below, and your site is ready to go!):</p>';
 				echo '<code>&lt;script src="' .H5BP_URL. '/js/modernizr.js"&gt;&lt;/script&gt;</code>';
-				echo '<p><strong>Note: If you do <em>not</em> include Modernizr, the IEShiv JS <em>will</em> be added to accommodate the HTML5 elements used in Boilerplate in weaker browsers:</strong></p>';
+				echo '<p><strong>Note: If you do <em>not</em> include Modernizr, the <a href="https://github.com/aFarkas/html5shiv#html5shiv-printshivjs">html5shiv-printshiv.js</a> <em>will</em> be added to accommodate the HTML5 elements used in Boilerplate in weaker browsers and make them ready for printing, you know, just in case:</strong></p>';
 				echo '<code>&lt;!--[if lt IE 9]&gt;</code>';
-				echo '<code>	&lt;script src="//html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;</code>';
-				echo '<code>	&lt;script&gt;window.html5 || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/ieshiv.js"%3E%3C/script%3E\'))&lt;/script&gt;</code>';
+				echo '<code>	&lt;script&gt;document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/html5shiv.js"%3E%3C/script%3E\'))&lt;/script&gt;</code>';
 				echo '<code>&lt;![endif]--&gt;</code>';
 			}
 		endif; // H5BP_modernizr_js_setting
@@ -419,7 +418,7 @@
 				echo '<code>&lt;script&gt;</code>';
 				echo '<code>var _gaq=[["_setAccount","UA-'.(($account !== 'XXXXX-X') ? $account : 'XXXXX-X').'"],["_trackPageview"]];</code>';
 				echo '<code>(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;</code>';
-				echo '<code>g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";</code>';
+				echo '<code>g.src="//www.google-analytics.com/ga.js";</code>';
 				echo '<code>s.parentNode.insertBefore(g,s)}(document,"script"));</code>';
 				echo '<code>&lt;/script&gt;</code>';
 				echo '<p><strong>Note: You must check the box <em>and</em> provide a UA code for this to be added to your pages.</strong></p>';
@@ -615,22 +614,22 @@
 		if ( ! function_exists( 'H5BP_add_modernizr_script' ) ):
 			function H5BP_add_modernizr_script() {
 				$cache = H5BP_cache_buster();
-				wp_deregister_script( 'ieshiv' ); // get rid of IEShiv if it somehow got called too (IEShiv is included in Modernizr)
+				wp_deregister_script( 'html5shiv' ); // get rid of html5shiv if it somehow got called too (html5shiv is included in Modernizr)
 				wp_deregister_script( 'modernizr' ); // get rid of any native Modernizr
 				echo '<script src="' .H5BP_URL. '/js/modernizr.js'.$cache.'"></script>'.PHP_EOL;
 			}
 		endif; // H5BP_add_modernizr_script
 
-		//	$options['H5BP_ieshiv_script']
-		if ( ! function_exists( 'H5BP_add_ieshiv_script' ) ):
-			function H5BP_add_ieshiv_script() {
+		//	$options['H5BP_html5shiv_script']
+		if ( ! function_exists( 'H5BP_add_html5shiv_script' ) ):
+			function H5BP_add_html5shiv_script() {
 				$cache = H5BP_cache_buster();
 				echo '<!--[if lt IE 9]>'.PHP_EOL;
 				echo '	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>'.PHP_EOL; // try getting from CDN
-				echo '	<script>window.html5 || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/ieshiv.js'.$cache.'"%3E%3C/script%3E\'))</script>'.PHP_EOL; // fallback to local if CDN fails
+				echo '	<script>window.html5 || document.write(unescape(\'%3Cscript src="' .H5BP_URL. '/js/html5shiv.js'.$cache.'"%3E%3C/script%3E\'))</script>'.PHP_EOL; // fallback to local if CDN fails
 				echo '<![endif]-->'.PHP_EOL;
 			}
-		endif; // H5BP_add_ieshiv_script
+		endif; // H5BP_add_html5shiv_script
 
 		//	$options['H5BP_respond_js']
 		if ( ! function_exists( 'H5BP_add_respond_script' ) ):
@@ -676,7 +675,7 @@
 				echo PHP_EOL.'<script>'.PHP_EOL;
 				echo 'var _gaq=[["_setAccount","UA-'.str_replace('UA-','',$account).'"],["_trackPageview"]];'.PHP_EOL;
 				echo '(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];'.PHP_EOL;
-				echo 'g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";'.PHP_EOL;
+				echo 'g.src="//www.google-analytics.com/ga.js";'.PHP_EOL;
 				echo 's.parentNode.insertBefore(g,s)}(document,"script"));'.PHP_EOL;
 				echo '</script>'.PHP_EOL;
 			}
@@ -765,8 +764,8 @@
 			if (isset($options['H5BP_modernizr_js']) && $options['H5BP_modernizr_js']) {
 				add_action('wp_print_styles', 'H5BP_add_modernizr_script');
 			} else {
-				// if Modernizr isn't selected, add IEShiv inside an IE Conditional Comment
-				add_action('wp_print_styles', 'H5BP_add_ieshiv_script');
+				// if Modernizr isn't selected, add html5shiv inside an IE Conditional Comment
+				add_action('wp_print_styles', 'H5BP_add_html5shiv_script');
 			}
 
 			if (isset($options['H5BP_respond_js']) && $options['H5BP_respond_js']) {

@@ -2,8 +2,8 @@
 Contributors: aarontgrogg
 Tags: html5, boilerplate
 Requires at least: 3.1
-Tested up to: 3.9
-Stable tag: 4.3
+Tested up to: 4.1.1
+Stable tag: 5.0.1
 
 Based on the [HTML5 Boilerplate](http://html5boilerplate.com/) created by
 [Paul Irish](http://paulirish.com/) and [Divya Manian](http://nimbupani.com/),
@@ -14,12 +14,11 @@ More about this plug-in can be found at http://aarontgrogg.com/html5boilerplate/
 
 == Description ==
 
-Standing on the foreheads of giants (namely [Paul Irish](http://paulirish.com/)
-and [Divya Manian](http://nimbupani.com/) and the good folks that have helped
-them create and continue the growth of HTML5 Boilerplate, I present to you my
-first WordPress plug-in, [HTML5 Boilerplate](http://html5boilerplate.com/).
-As a spin-off of my [Boilerplate - Starkers WP Theme](http://aarontgrogg.com/boilerplate/),
-this plug-in can be added to any theme, new, pre-existing, already customized, whatevs!
+Standing on the foreheads of giants (namely Paul Irish and Divya Manian and 
+the good folks that have helped them create and continue the growth of HTML5 Boilerplate, 
+I present to you my first WordPress plug-in, HTML5 Boilerplate.  As a spin-off of my 
+Boilerplate - Starkers WP Theme, this plug-in can be added to any theme, new, pre-existing, 
+already customized, whatevs!
 
 The clumsiest part of this is dealing with the Boilerplate CSS and JS files.
 To avoid any changes you make from being overwritten during upgrades,
@@ -35,8 +34,7 @@ Your call, let me know if you can think of a better implementation.
 More about this plug-in can be found at:
 http://aarontgrogg.com/html5boilerplate/
 
-I also built a Boilerplate theme based on [Elliot Jay Stocks'](http://elliotjaystocks.com/)
-[Starkers Theme](http://starkerstheme.com/) that can be found at:
+I also built a Boilerplate theme based on Elliot Jay Stocks' Starkers Theme that can be found at:
 http://aarontgrogg.com/boilerplate/
 
 Please let me know if you have any questions/suggestions/thoughts,
@@ -95,8 +93,37 @@ aarontgrogg@gmail.com
 
 == Changelog ==
 
+= 5.0.1 2015-03-13 =
+* The first update in nearly two years, on Friday the 13th...  What could go wrong??  ;-)
+* Updated `css/site-specific.css` with latest `normal.css` and `main.css`
+* Removed `docs/*`; if you want this, please refer to https://github.com/h5bp/html5-boilerplate/tree/master/dist/doc
+* Updated `plugins.js`
+* Updated `jquery.js` to 1.11.2
+* Updated `modernizr.js` to 2.8.3
+* Updated `respond.js` to 1.4.2 (from separate repo: https://github.com/scottjehl/Respond)
+* Updated `html5shiv-printshiv.js` to 3.7.3 (from separate repo: https://github.com/aFarkas/html5shiv)
+* Updated default viewport setting to `width=device-width, initial-scale=1`
+* Please note that, while HTML5 Boilerplate, and truly most of the rest of the world, has moved beyond IE6, 7, and even 8,
+  I retain things like IE Conditionals, IE-only CSS, etc., since you, the developer, can check or uncheck any of these options,
+  based on your individual project needs.
+* Updated `admin-style.css` to make sure if worked well on smaller screens, too
+* Renamed _LICENSE as LICENSE.txt and README as README.txt; and I'm done playing the Rename Game with these two, H5BP peeps...
+* Removed extraneous screenshot images from root
+* Tested & verified in WP 4.1.1
+
+= 4.4 2013-04-11 =
+* Updated `css/site-specific.css`, concatenating `normal.css` and `main.css`
+* Updated `docs/*`
+* Updated `plugins.js`
+* Updated `modernizr.js` to 2.6.2
+* Updated `respond.js`
+* Updated name of `ieshiv.js` to `html5shiv.js`
+* Replaced contents of `html5shiv.js` with `html5shiv-printshiv.js`; I know it means 4kb instead of 2kb, but it just seems right...
+* Updated `_LICENSE.txt` to reflect HTML5 Boilerplate `LICENSE.md`
+* Removed protocol check in Google Analytics block
+
 = 4.3 2013-04-05 =
-* Big thanks to Fr�d�ric Bolduc for pointing out that jQuery was being added twice, once from the Google CDN,
+* Big thanks to FrŽdŽric Bolduc for pointing out that jQuery was being added twice, once from the Google CDN,
   then again the local version, because I had `!window.jQuery || ...` instead of `window.jQuery || ...`  Doh!
 * And speaking of jQuery, updated the local version to 1.9.1.
 * Finally figured out how Screenshots work, so... whew-hew!
